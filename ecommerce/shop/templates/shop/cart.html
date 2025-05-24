@@ -1,0 +1,11 @@
+<!-- templates/shop/cart.html -->
+<h1>Your Cart</h1>
+<ul>
+    {% for item in cart.items.all %}
+    <li>
+        {{ item.product.name }} - ${{ item.product.price }} x {{ item.quantity }} = ${{ item.total_price }}
+    </li>
+    {% endfor %}
+</ul>
+<h2>Total: ${{ total_price }}</h2>
+<a href="{% url 'product_list' %}">Back to Shop</a> <a href="{% url 'checkout' %}">Checkout</a>

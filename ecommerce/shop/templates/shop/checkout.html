@@ -1,0 +1,7 @@
+<!-- templates/shop/checkout.html -->
+<h1>Checkout</h1>
+<p>Total Price: ${{ total_price }}</p>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Proceed to Payment</button>
+</form>

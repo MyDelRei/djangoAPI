@@ -1,0 +1,11 @@
+<!-- templates/shop/product_list.html -->
+<h1>Products</h1>
+<ul>
+    {% for product in products %}
+    <li>
+        {{ product.name }} - ${{ product.price }}
+        <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'cart' %}">Go to Cart</a>
